@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קהילת דניס טל - האתר הרשמי</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================= */
+        /* --- קטגוריה: עיצובים וצבעים (CSS) --- */
+        /* ========================================= */
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #050505; /* צבע רקע כללי (שחור) */
+            color: white;
+            font-family: 'Rubik', sans-serif;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: white; }
+        ul { list-style: none; padding: 0; }
+
+        /* סרגל גלילה מעוצב */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #ff00cc; border-radius: 5px; }
+
+        /* תפריט עליון */
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            padding: 20px 40px;
+            background-color: rgba(0,0,0,0.8);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid #333;
+        }
+
+        nav a {
+            margin-left: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #ff00cc; }
+
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a0a1a 0%, #000000 70%);
+        }
+
+        /* --- קטגוריה: תמונות (לוגו ראשי) --- 
+           כאן משנים את התמונה הראשית של דניס טל
+        */
+        .logo-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 25px;
+            background-color: #333;
+            
+            /* >>> שנה את השם כאן לשם התמונה שלך <<< */
+            background-image: url('dora.jpg'); 
+            
+            background-size: cover;
+            box-shadow: 0 0 40px rgba(255, 0, 204, 0.6);
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin: 10px 0;
+            text-shadow: 0 0 20px rgba(255, 0, 204, 0.5);
+        }
+
+        .hero-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 18px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-discord {
+            background: linear-gradient(45deg, #ff00cc, #ff3399);
+            box-shadow: 0 0 20px rgba(255, 0, 204, 0.4);
+            color: white;
+        }
+
+        .btn-forms {
+            background-color: #222;
+            border: 1px solid #444;
+            color: #ddd;
+        }
+
+        .btn:hover { transform: scale(1.05); }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 60px 0 40px 0;
+            color: #ffccf2;
+            text-shadow: 0 0 10px #ff00cc;
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: #111;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            width: 250px;
+            text-align: center;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+
+        .card:hover {
+            border-color: #ff00cc;
+            box-shadow: 0 0 20px rgba(255, 0, 204, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .card-icon { font-size: 50px; margin-bottom: 15px; }
+        .card h3 { color: #ff00cc; margin: 0; font-size: 22px; }
+
+        .about-section {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #ccc;
+        }
+
+        .rules-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .rule-box {
+            background-color: #151515;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            border-top: 3px solid #ff00cc;
+        }
+
+        .rule-box h3 { text-align: center; margin-top: 0; }
+        .rule-box li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-right: 20px;
+            font-size: 14px;
+            color: #ddd;
+        }
+        .rule-box li::before {
+            content: "•";
+            color: #ff00cc;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+
+        .contact-area {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 50px 20px;
+            flex-wrap: wrap;
+        }
+
+        .form-container {
+            width: 600px;
+            height: 700px;
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        iframe { width: 100%; height: 100%; border: none; }
+
+        .discord-side-box {
+            width: 300px;
+            height: 200px;
+            background-color: #1a1a1a;
+            border: 1px solid #ff00cc;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #000;
+            color: #666;
+            margin-top: 50px;
+            border-top: 1px solid #222;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#contact">צור קשר</a>
+        <a href="#rules">חוקים</a>
+        <a href="#features">פיצ'רים</a>
+        <a href="#about">אודות</a>
+        <a href="#">בית</a>
+    </nav>
+
+    <div class="hero">
+        <div class="logo-img"></div> <h1>קהילת דניס טל</h1>
+        
+        <div class="hero-buttons">
+            <button class="btn btn-discord">⚡ הצטרפו לדיסקורד</button>
+            <a href="#contact" class="btn btn-forms">טפסים לצוות</a>
+        </div>
+    </div>
+
+    <h2 id="features" class="section-title">פיצ'רים</h2>
+    <div class="features-container">
+        
+        <div class="card">
+            <div class="card-icon">🏆</div> <h3>טורנירים</h3>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🎉</div>
+            <h3>הגרלות</h3>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📅</div>
+            <h3>איוונטים</h3>
+        </div>
+    </div>
+
+    <h2 id="about" class="section-title">אודות הקהילה</h2>
+    <div class="about-section">
+        <p>ברוכים הבאים לקהילת דניס טל! הקהילה המובילה שדואגת לכם לתוכן הכי איכותי, פעילויות מסביב לשעון וצוות מקצועי.</p>
+    </div>
+
+    <h2 id="rules" class="section-title">חוקי הקהילה</h2>
+    <div class="rules-container">
+        <div class="rule-box">
+            <h3>💬 חוקי הצ'אטים</h3>
+            <ul>
+                <li>אין להספים את הצ'אט</li>
+                <li>שמרו על שפה נקייה</li>
+                <li>כבדו את כל המשתמשים</li>
+            </ul>
+        </div>
+        <div class="rule-box">
+            <h3>📜 חוקי התנהגות</h3>
+            <ul>
+                <li>הקשיבו לצוות הניהול</li>
+                <li>אין לפרסם שרתים אחרים</li>
+                <li>אין להטריד אף משתמש</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2 id="contact" class="section-title">הגשת מועמדות לצוות</h2>
+    <div class="contact-area">
+        
+        <div class="form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdc_XXXXXXXXX/viewform?embedded=true">Loading…</iframe>
+        </div>
+
+        <div class="discord-side-box">
+            <h3>יצירת קשר</h3>
+            <p>הצטרפו לשרת הדיסקורד</p>
+            <button class="btn btn-discord">Discord</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 קהילת דניס טל</p>
+    </footer>
+
+</body>
+</html>
