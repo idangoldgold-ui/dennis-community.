@@ -23,10 +23,10 @@
         a { text-decoration: none; color: white; }
         ul { list-style: none; padding: 0; }
 
-        /* סרגל גלילה מעוצב */
+        /* סרגל גלילה מעוצב - שונה לצהוב */
         ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: #111; }
-        ::-webkit-scrollbar-thumb { background: #ff00cc; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb { background: #ffd700; border-radius: 5px; }
 
         /* תפריט עליון */
         nav {
@@ -47,7 +47,8 @@
             font-size: 16px;
             transition: color 0.3s;
         }
-        nav a:hover { color: #ff00cc; }
+        /* אפקט מעבר עכבר בתפריט - שונה לצהוב */
+        nav a:hover { color: #ffd700; }
 
         .hero {
             height: 90vh;
@@ -68,11 +69,12 @@
             border-radius: 25px;
             background-color: #333;
             
-            /* >>> שנה את השם כאן לשם התמונה שלך <<< */
+            /* התמונה שלך */
             background-image: url('1.webp'); 
             
             background-size: cover;
-            box-shadow: 0 0 40px rgba(255, 0, 204, 0.6);
+            /* הילה צהובה סביב התמונה */
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
             margin-bottom: 20px;
             animation: float 3s ease-in-out infinite;
         }
@@ -80,7 +82,8 @@
         h1 {
             font-size: 4rem;
             margin: 10px 0;
-            text-shadow: 0 0 20px rgba(255, 0, 204, 0.5);
+            /* צל טקסט צהוב */
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
         }
 
         .hero-buttons {
@@ -97,12 +100,14 @@
             transition: transform 0.2s, box-shadow 0.2s;
             cursor: pointer;
             border: none;
+            display: inline-block; /* חשוב כדי שה-Link יראה כמו כפתור */
         }
 
+        /* כפתור דיסקורד - שונה לצהוב/כתום */
         .btn-discord {
-            background: linear-gradient(45deg, #ff00cc, #ff3399);
-            box-shadow: 0 0 20px rgba(255, 0, 204, 0.4);
-            color: white;
+            background: linear-gradient(45deg, #ffd700, #e6ac00);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            color: black; /* טקסט שחור בולט יותר על צהוב */
         }
 
         .btn-forms {
@@ -117,8 +122,8 @@
             text-align: center;
             font-size: 2.5rem;
             margin: 60px 0 40px 0;
-            color: #ffccf2;
-            text-shadow: 0 0 10px #ff00cc;
+            color: #fffacd; /* צהוב בהיר */
+            text-shadow: 0 0 10px #ffd700;
         }
 
         .features-container {
@@ -140,14 +145,16 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
 
+        /* אפקט מעבר עכבר על כרטיסיות - שונה לצהוב */
         .card:hover {
-            border-color: #ff00cc;
-            box-shadow: 0 0 20px rgba(255, 0, 204, 0.2);
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
             transform: translateY(-5px);
         }
 
         .card-icon { font-size: 50px; margin-bottom: 15px; }
-        .card h3 { color: #ff00cc; margin: 0; font-size: 22px; }
+        /* כותרות כרטיסיות - שונה לצהוב */
+        .card h3 { color: #ffd700; margin: 0; font-size: 22px; }
 
         .about-section {
             max-width: 800px;
@@ -172,7 +179,7 @@
             padding: 20px;
             border-radius: 10px;
             width: 300px;
-            border-top: 3px solid #ff00cc;
+            border-top: 3px solid #ffd700; /* פס עליון צהוב */
         }
 
         .rule-box h3 { text-align: center; margin-top: 0; }
@@ -183,9 +190,10 @@
             font-size: 14px;
             color: #ddd;
         }
+        /* הנקודות ברשימה - שונה לצהוב */
         .rule-box li::before {
             content: "•";
-            color: #ff00cc;
+            color: #ffd700;
             font-weight: bold;
             position: absolute;
             right: 0;
@@ -213,7 +221,7 @@
             width: 300px;
             height: 200px;
             background-color: #1a1a1a;
-            border: 1px solid #ff00cc;
+            border: 1px solid #ffd700; /* מסגרת צהובה */
             border-radius: 15px;
             display: flex;
             flex-direction: column;
@@ -252,7 +260,7 @@
         <div class="logo-img"></div> <h1>קהילת דניס טל</h1>
         
         <div class="hero-buttons">
-            <button class="btn btn-discord">⚡ הצטרפו לדיסקורד</button>
+            <a href="https://discord.gg/denistal-806552902440321024" target="_blank" class="btn btn-discord">⚡ הצטרפו לדיסקורד</a>
             <a href="#contact" class="btn btn-forms">טפסים לצוות</a>
         </div>
     </div>
@@ -308,9 +316,9 @@
         </div>
 
         <div class="discord-side-box">
-            <h3>יצירת קשר</h3>
+            <h3 style="color: #ffd700;">יצירת קשר</h3>
             <p>הצטרפו לשרת הדיסקורד</p>
-            <button class="btn btn-discord">Discord</button>
+            <a href="https://discord.gg/denistal-806552902440321024" target="_blank" class="btn btn-discord">Discord</a>
         </div>
     </div>
 
@@ -319,5 +327,4 @@
     </footer>
 
 </body>
-
 </html>
